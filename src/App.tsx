@@ -1,9 +1,9 @@
 import "./App.css";
-
+import HeaderData from "./Components/HeaderData";
 function App() {
   return (
     <div className="App">
-      <h1></h1>
+      <HeaderData />
     </div>
   );
 }
