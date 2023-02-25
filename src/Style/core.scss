@@ -43,3 +43,20 @@
     font-size: 1.4rem;
   }
 }
+.hourly-section {
+  width: 100%;
+  background-color: #61c2d6;
+
+  div {
+    font-size: 1.2rem;
+    line-height: 1rem;
+    font-weight: 500;
+  }
+  span {
+    font-weight: 400;
+    font-size: 1.8rem;
+  }
+}
+.hourly-section:nth-child(2n) {
+  background-color: hsl(190, 59%, 50%);
+}
