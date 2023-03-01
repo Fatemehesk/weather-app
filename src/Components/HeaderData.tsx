@@ -1,15 +1,33 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import cloud from "../assets/cloud.png";
+import { getWeather } from "../Servises/getWeather";
+
+export type currentWeatherType = {
+  temperature: number;
+  windspeed: number;
+  weathercode: string;
+};
 
 const HeaderData: FC = (): JSX.Element => {
+  const [currentWeather, setCurrentWeather] = useState<currentWeatherType>();
+  useEffect(() => {
+    getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone).then(
+      (res) => {
+        console.log(res);
+        setCurrentWeather(res.current_weather);
+      }
+    );
+  }, []);
+  console.log(currentWeather?.temperature, "currr");
+
   return (
     <Row>
       <Col xs={6}>
         <div className="d-flex border-end border-primary  mt-5  justify-content-center align-items-center header__left">
           <Image src={cloud} data-current-icon />
           <div className="header__left-temp ms-3 ">
-            <span data-current-temp>31 &deg;</span>
+            <span data-current-temp>{currentWeather?.temperature} &deg;</span>
           </div>
         </div>
       </Col>
@@ -28,7 +46,7 @@ const HeaderData: FC = (): JSX.Element => {
           <div className="--info-group">
             {" "}
             <div className="--label">WIND</div>{" "}
-            <span data-current-wind>9 mph</span>
+            <span data-current-wind>{currentWeather?.windspeed} mph</span>
           </div>
           <div className="--info-group">
             {" "}
