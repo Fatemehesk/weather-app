@@ -8,18 +8,26 @@ export type currentWeatherType = {
   windspeed: number;
   weathercode: string;
 };
-
+type dailyType = {
+  temperature_2m_max: [];
+  temperature_2m_min: [];
+  apparent_temperature_max: [];
+  apparent_temperature_min: [];
+  precipitation_sum: [];
+};
 const HeaderData: FC = (): JSX.Element => {
   const [currentWeather, setCurrentWeather] = useState<currentWeatherType>();
+  const [dailyTemp, setDailyTemp] = useState<dailyType>();
   useEffect(() => {
     getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone).then(
       (res) => {
         console.log(res);
         setCurrentWeather(res.current_weather);
+        setDailyTemp(res.daily);
       }
     );
   }, []);
-  console.log(currentWeather?.temperature, "currr");
+  console.log(dailyTemp.apparent_temperature_min[0], "currr");
 
   return (
     <Row>
@@ -36,12 +44,22 @@ const HeaderData: FC = (): JSX.Element => {
           <div className="--info-group ">
             {" "}
             <div className="--label">High</div>{" "}
-            <span data-current-high>32 &deg;</span>
+            <span data-current-high>
+              {" "}
+              {dailyTemp?.apparent_temperature_max[0] &&
+                Math.round(dailyTemp!.apparent_temperature_max[0])}{" "}
+              &deg;
+            </span>
           </div>
           <div className="--info-group">
             {" "}
             <div className="--label">FL HIGH</div>{" "}
-            <span data-current-fl-high>27&deg;</span>
+            <span data-current-fl-high>
+              {" "}
+              {dailyTemp?.apparent_temperature_max[0] &&
+                Math.round(dailyTemp!.apparent_temperature_max[0])}
+              &deg;
+            </span>
           </div>
           <div className="--info-group">
             {" "}
@@ -51,17 +69,32 @@ const HeaderData: FC = (): JSX.Element => {
           <div className="--info-group">
             {" "}
             <div className="--label">LOW</div>{" "}
-            <span data-current-low>19 &deg;</span>
+            <span data-current-low>
+              {" "}
+              {dailyTemp?.temperature_2m_min[0] &&
+                Math.round(dailyTemp!.temperature_2m_min[0])}{" "}
+              &deg;
+            </span>
           </div>
           <div className="--info-group">
             {" "}
             <div className="--label">FL LOW</div>{" "}
-            <span data-current-fl-row>12 &deg;</span>
+            <span data-current-fl-row>
+              {" "}
+              {dailyTemp?.apparent_temperature_min[0] &&
+                Math.round(dailyTemp!.apparent_temperature_min[0])}{" "}
+              &deg;
+            </span>
           </div>
           <div className="--info-group">
             {" "}
             <div className="--label">PRECIP</div>{" "}
-            <span data-current-precip>.01 in</span>
+            <span data-current-precip>
+              {" "}
+              {dailyTemp?.precipitation_sum[0] &&
+                Math.round(dailyTemp!.precipitation_sum[0])}{" "}
+              in
+            </span>
           </div>
         </div>
       </Col>
