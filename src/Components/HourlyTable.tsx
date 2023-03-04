@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import cloud from "../assets/cloudy.png";
+import cloud from "../assets/cloud.png";
 
 const HourlyTable: FC = (): JSX.Element => {
   return (
