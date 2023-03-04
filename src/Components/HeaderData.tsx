@@ -1,7 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import cloud from "../assets/cloudy.png";
 import { getWeather } from "../Servises/getWeather";
+import { ICON_MAP } from "../helper/iconMap";
+import cloud from "../assets/cloud.png";
 
 export type currentWeatherType = {
   temperature: number;
@@ -32,7 +33,9 @@ const HeaderData: FC = (): JSX.Element => {
     <Row>
       <Col xs={6}>
         <div className="d-flex border-end border-primary  mt-5  justify-content-center align-items-center header__left">
-          <Image src={cloud} data-current-icon />
+          <Image
+            src={`/src/assets/${ICON_MAP.get(currentWeather?.weathercode)}.png`}
+          />
           <div className="header__left-temp ms-3 ">
             <span data-current-temp>{currentWeather?.temperature} &deg;</span>
           </div>
