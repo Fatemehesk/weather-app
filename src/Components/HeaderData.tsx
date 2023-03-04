@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import cloud from "../assets/cloud.png";
+import cloud from "../assets/cloudy.png";
 import { getWeather } from "../Servises/getWeather";
 
 export type currentWeatherType = {
@@ -9,11 +9,11 @@ export type currentWeatherType = {
   weathercode: string;
 };
 type dailyType = {
-  temperature_2m_max: [];
-  temperature_2m_min: [];
-  apparent_temperature_max: [];
-  apparent_temperature_min: [];
-  precipitation_sum: [];
+  temperature_2m_max: number[];
+  temperature_2m_min: number[];
+  apparent_temperature_max: number[];
+  apparent_temperature_min: number[];
+  precipitation_sum: number[];
 };
 const HeaderData: FC = (): JSX.Element => {
   const [currentWeather, setCurrentWeather] = useState<currentWeatherType>();
@@ -27,7 +27,6 @@ const HeaderData: FC = (): JSX.Element => {
       }
     );
   }, []);
-  console.log(dailyTemp.apparent_temperature_min[0], "currr");
 
   return (
     <Row>
