@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import cloud from "../assets/cloud.png";
+import cloud from "../assets/cloudy.png";
 
 const HourlyTable: FC = (): JSX.Element => {
   return (
@@ -13,7 +13,7 @@ const HourlyTable: FC = (): JSX.Element => {
           <div className="my-3">Thursday</div>
           <span>3 PM</span>
         </div>
-        <Image src={cloud} data-current-icon />
+        <Image src={cloud} width={70} />
         <div className="">
           <div className="my-3">Temp</div>
           <span data-current-temp>31 &deg;</span>
@@ -39,7 +39,7 @@ const HourlyTable: FC = (): JSX.Element => {
           <div className="my-3">Thursday</div>
           <span>3 PM</span>
         </div>
-        <Image src={cloud} data-current-icon />
+        <Image src={cloud} width={70} />
         <div className="">
           <div className="my-3">Temp</div>
           <span data-current-temp>31 &deg;</span>
@@ -65,7 +65,7 @@ const HourlyTable: FC = (): JSX.Element => {
           <div className="my-3">Thursday</div>
           <span>3 PM</span>
         </div>
-        <Image src={cloud} data-current-icon />
+        <Image src={cloud} width={70} />
         <div className="">
           <div className="my-3">Temp</div>
           <span data-current-temp>31 &deg;</span>
@@ -91,7 +91,7 @@ const HourlyTable: FC = (): JSX.Element => {
           <div className="my-3">Thursday</div>
           <span>3 PM</span>
         </div>
-        <Image src={cloud} data-current-icon />
+        <Image src={cloud} width={70} />
         <div className="">
           <div className="my-3">Temp</div>
           <span data-current-temp>31 &deg;</span>
@@ -117,7 +117,7 @@ const HourlyTable: FC = (): JSX.Element => {
           <div className="my-3">Thursday</div>
           <span>3 PM</span>
         </div>
-        <Image src={cloud} data-current-icon />
+        <Image src={cloud} width={70} />
         <div className="">
           <div className="my-3">Temp</div>
           <span data-current-temp>31 &deg;</span>
