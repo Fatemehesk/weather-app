@@ -9,7 +9,7 @@ export type currentWeatherType = {
   windspeed: number;
   weathercode: string;
 };
-type dailyType = {
+export type dailyType = {
   temperature_2m_max: number[];
   temperature_2m_min: number[];
   apparent_temperature_max: number[];
@@ -22,7 +22,6 @@ const HeaderData: FC = (): JSX.Element => {
   useEffect(() => {
     getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone).then(
       (res) => {
-        console.log(res);
         setCurrentWeather(res.current_weather);
         setDailyTemp(res.daily);
       }
