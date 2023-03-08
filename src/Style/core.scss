@@ -60,3 +60,8 @@
 .hourly-section:nth-child(2n) {
   background-color: hsl(190, 59%, 50%);
 }
+.day-section {
+  div {
+    width: max-content;
+  }
+}
