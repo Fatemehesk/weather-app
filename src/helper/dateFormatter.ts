@@ -1,6 +1,7 @@
-export const dateFormatterFunc = (date: number) => {
+export const dateFormatterFunc = (date: any) => {
   const date_Formatter = new Intl.DateTimeFormat(undefined, {
-    weekday: "short",
-  }).format(date);
-  return date_Formatter;
+    weekday: "long",
+  });
+  const dailyDate = date_Formatter.format(date);
+  return dailyDate;
 };

@@ -6,7 +6,7 @@ import { dateFormatterFunc } from "../helper/dateFormatter";
 import { ICON_MAP } from "../helper/iconMap";
 
 type dailyCardType = {
-  time: string[];
+  time: any[];
   temperature_2m_max: number[];
   weathercode: number[];
 };
@@ -50,7 +50,7 @@ const DayCards: FC = (): JSX.Element => {
                       </div>
                       <span data-current-high>
                         {" "}
-                        {dateFormatterFunc(1678226400)}
+                        {dateFormatterFunc(dailyTemp.time[index])}
                       </span>
                     </Col>
                   );
@@ -58,23 +58,6 @@ const DayCards: FC = (): JSX.Element => {
               )
             : ""}
         </div>
-        {/* {dailyTemp
-          ? Object.values(dailyTemp).map((val, index) => {
-              return (
-                <Col
-                  sm={1}
-                  key={index}
-                  className="Day-card border d-flex flex-column border-dark rounded-2 justify-content-center align-items-center pb-3"
-                >
-                  <img src={cloud} className="weather-icon" />
-                  <div className="day-card-day my-3">
-                    {(console.log(val, "value"), "hi")}
-                  </div>
-                  <span data-current-high>32 &deg;</span>
-                </Col>
-              );
-            })
-          : ""} */}
       </section>
     </>
   );
