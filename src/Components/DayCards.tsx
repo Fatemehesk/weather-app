@@ -20,7 +20,6 @@ const DayCards: FC = (): JSX.Element => {
       }
     );
   }, []);
-  console.log(dailyTemp?.time);
 
   return (
     <>
