@@ -20,12 +20,14 @@ const HeaderData: FC = (): JSX.Element => {
   const [currentWeather, setCurrentWeather] = useState<currentWeatherType>();
   const [dailyTemp, setDailyTemp] = useState<dailyType>();
   useEffect(() => {
-    getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone).then(
-      (res) => {
-        setCurrentWeather(res.current_weather);
-        setDailyTemp(res.daily);
-      }
-    );
+    getWeather(
+      59.42,
+      24.8,
+      Intl.DateTimeFormat().resolvedOptions().timeZone
+    ).then((res) => {
+      setCurrentWeather(res.current_weather);
+      setDailyTemp(res.daily);
+    });
   }, []);
 
   return (
