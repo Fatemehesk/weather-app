@@ -14,12 +14,15 @@ type dailyCardType = {
 const DayCards: FC = (): JSX.Element => {
   const [dailyTemp, setDailyTemp] = useState<dailyCardType>();
   useEffect(() => {
-    getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone).then(
-      (res) => {
-        setDailyTemp(res.daily);
-      }
-    );
-  }, []);
+    getWeather(
+      59.42,
+      24.8,
+      Intl.DateTimeFormat().resolvedOptions().timeZone
+    ).then((res) => {
+      setDailyTemp(res.daily);
+    });
+  }, [dailyTemp]);
+  console.log();
 
   return (
     <>
@@ -48,7 +51,6 @@ const DayCards: FC = (): JSX.Element => {
                         {dailyTemp.temperature_2m_max[index]}&deg;
                       </div>
                       <span data-current-high>
-                        {" "}
                         {dateFormatterFunc(dailyTemp.time[index])}
                       </span>
                     </Col>

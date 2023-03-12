@@ -14,11 +14,13 @@ type hourlyCardType = {
 const HourlyTable: FC = (): JSX.Element => {
   const [hourlyTemp, sethourlyTemp] = useState<hourlyCardType>();
   useEffect(() => {
-    getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone).then(
-      (res) => {
-        sethourlyTemp(res.hourly);
-      }
-    );
+    getWeather(
+      59.42,
+      24.8,
+      Intl.DateTimeFormat().resolvedOptions().timeZone
+    ).then((res) => {
+      sethourlyTemp(res.hourly);
+    });
   }, []);
   console.log(hourlyTemp, "hourly");
   return (
