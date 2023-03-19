@@ -1,7 +1,16 @@
 export const dateFormatterFunc = (date: any) => {
-  const date_Formatter = new Intl.DateTimeFormat(undefined, {
-    weekday: "long",
+  const dateTime = new Date(date * 1000);
+  const dateString = dateTime.toLocaleString("en-US", { weekday: "short" });
+  return dateString;
+};
+export const dateFormatterToHourFunc = (date: any) => {
+  const dateTime = new Date(date * 1000);
+  const dateString = dateTime.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    hour12: true,
+    second: undefined,
+    minute: undefined,
   });
-  const dailyDate = date_Formatter.format(date);
-  return dailyDate;
+
+  return dateString;
 };
