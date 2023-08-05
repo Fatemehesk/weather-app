@@ -29,26 +29,36 @@
   }
 }
 .Day-card {
-  img {
-    width: 7rem;
-    height: 8rem;
-  }
-  .day-card-day {
-    font-size: 1.5rem;
-    line-height: 1rem;
-    font-weight: 500;
-  }
-  span {
-    font-weight: 400;
-    font-size: 1.4rem;
-  }
+  width: 11rem;
+  padding: 1rem;
+  border: 3px solid #ccc;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.Day-card img {
+  width: 7rem;
+  height: 8rem;
+  object-fit: contain;
+}
+
+.day-card-day {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+span {
+  font-weight: 400;
+  font-size: 1.4rem;
 }
 .hourly-section {
   width: 100%;
   background-color: #61c2d6;
 
   div {
-    font-size: 1.2rem;
+   
     line-height: 1rem;
     font-weight: 500;
   }
@@ -64,4 +74,31 @@
   div {
     width: max-content;
   }
+}
+.hourly-countainer{
+  padding: .5rem;
+  max-width:80rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ gap:4rem;
+ font-size: 1.2rem;
+  border-top: 1px solid #f2f2f2;
+  flex-wrap: wrap;
+  @media screen and (max-width:1024px) {
+    gap:2rem;
+  }
+  @media screen and (max-width:790px) {
+    gap:0.25rem;
+    font-size: 12px;
+  }
+}
+.hourly-header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  //gap:4.5rem;
+  padding: 1rem 0;
 }

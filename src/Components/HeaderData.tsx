@@ -32,7 +32,7 @@ const HeaderData: FC = (): JSX.Element => {
 
   return (
     <Row>
-      <Col xs={6}>
+      <Col xs={12} md={6}>
         <div className="d-flex border-end border-primary  mt-5  justify-content-center align-items-center header__left">
           <Image
             src={`/src/assets/${ICON_MAP.get(currentWeather?.weathercode)}.png`}
@@ -42,7 +42,7 @@ const HeaderData: FC = (): JSX.Element => {
           </div>
         </div>
       </Col>
-      <Col xs={6}>
+      <Col xs={12} md={6}>
         <div className="header__right d-flex flex-row justify-content-between flex-wrap mt-5">
           <div className="--info-group ">
             {" "}
