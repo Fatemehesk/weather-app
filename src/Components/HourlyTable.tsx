@@ -28,7 +28,7 @@ const HourlyTable: FC = (): JSX.Element => {
   // }, []);
   useEffect(() => {
     // Mock data
-    const mockHourlyData: hourlyCardType = {
+    const mockHourlyData: hourlyCardType = { //need subscriptipn to get real data
       time: [1, 2, 3, 4, 5],
       temperature_2m: [20, 22, 18, 19, 21],
       apparent_temperature: [19, 20, 16, 17, 18],
