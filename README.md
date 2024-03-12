@@ -22,3 +22,6 @@ These instructions will help you set up and run the project on your local machin
 
    ```bash
    git clone https://github.com/your-username/your-weather-app.git
+2.Create a .env file:
+
+Create a .env file in the root directory and add your OpenWeatherMap API key:
